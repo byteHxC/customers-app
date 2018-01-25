@@ -1,0 +1,22 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "dni": "1",
+      "name": "Juan Perez Mota",
+      "age": 428
+    },
+    {
+      "id": "2",
+      "dni": "2",
+      "name": "Fernando Tellez",
+      "age": 35
+    },
+    {
+      "id": "3",
+      "dni": "3",
+      "name": "Luis Martinez Campos",
+      "age": 32
+    }
+  ]
+}

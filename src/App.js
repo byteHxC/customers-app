@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
+import HomeContainer from './containers/HomeContainer';
+import CustomersContainer from './containers/CustomersContainer'
+import CustomerContainer from './containers/CustomerContainer';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <Router>
+        <div>
+          <Route exact path="/" component={HomeContainer} />
+          <Route exact path="/customers" component={CustomersContainer}/>
+          <Switch>
+            <Route path="/customer/new" component={CustomerContainer}/>
+            <Route path="/customer/:dni" render={props => <CustomerContainer dni={props.match.params.dni}/>} />
+          </Switch>
+        </div>
+      </Router>
     );
   }
 }
